@@ -19,7 +19,7 @@ jobs:
 
   buildAndPush:
     name: 'Build and Push a Docker Image'
-    runs-on: ubuntu-latest
+    runs-on: k8s
     # Uses the Bash shell regardless of the GitHub Actions runner
     defaults:
       run:
@@ -44,7 +44,7 @@ jobs:
   UpdateTheVersion:
     needs: buildAndPush
     name: 'Update Docker image version'
-    runs-on: ubuntu-latest
+    runs-on: k8s
     # Runs only when the PR has been merged
     if: github.event.pull_request.merged
 
