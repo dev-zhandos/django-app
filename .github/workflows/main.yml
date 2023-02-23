@@ -60,10 +60,10 @@ jobs:
       run: sed -i "19s/\(django-app:\).*/\1${GITHUB_SHA::7}/" ./manifests/deployment.yaml
 
     # Commits the change
+    #git config --system user.email "usenzhandos@hotmail.com"
+    #    git config --system user.name "dev-zhandos"
     - name: Commit files 
       run: |
-        git config --system user.email "usenzhandos@hotmail.com"
-        git config --system user.name "dev-zhandos"
         git status
         git add ./manifests
         git commit -m "Updated the version of the Docker image"
