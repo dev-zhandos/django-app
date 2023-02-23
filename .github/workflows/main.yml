@@ -5,6 +5,7 @@ on:
   push:
     branches:
     - feature/*
+    - main
   # Triggers the workflow when a PR created against main branch has been closed
   pull_request:
     branches:
