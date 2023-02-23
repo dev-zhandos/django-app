@@ -57,13 +57,13 @@ jobs:
 
     # Updates the image version in the deployment manifest
     - name: Update the version
-      run: sed -i "19s/\(simple-app:\).*/\1${GITHUB_SHA::7}/" ./manifests/deployment.yaml
+      run: sed -i "19s/\(django-app:\).*/\1${GITHUB_SHA::7}/" ./manifests/deployment.yaml
 
     # Commits the change
     - name: Commit files 
       run: |
-        git config --local user.email "usenzhandos@hotmail.com"
-        git config --local user.name "dev-zhandos"
+        git config --global user.email "usenzhandos@hotmail.com"
+        git config --global user.name "dev-zhandos"
         git status
         git add ./manifests
         git commit -m "Updated the version of the Docker image"
