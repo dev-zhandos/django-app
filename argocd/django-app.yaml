@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: django-app
   # You'll usually want to add your resources to the argocd namespace.
-  namespace: dev
+  namespace: argocd
 
 spec:
   # The project the application belongs to.
@@ -18,7 +18,7 @@ spec:
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
-    namespace: simple-app
+    namespace: dev
 
   # Sync policy
   syncPolicy:
