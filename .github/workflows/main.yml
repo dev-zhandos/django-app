@@ -43,7 +43,7 @@ jobs:
   UpdateTheVersion:
     needs: buildAndPush
     name: 'Update Docker image version'
-    runs-on: k8s
+    runs-on: ubuntu-latest
     # Runs only when the PR has been merged
     if: github.event.pull_request.merged
 
@@ -62,8 +62,8 @@ jobs:
     # Commits the change
     - name: Commit files 
       run: |
-        git config --system user.email "usenzhandos@hotmail.com"
-        git config --system user.name "dev-zhandos"
+        git config --local user.email "usenzhandos@hotmail.com"
+        git config --local user.name "dev-zhandos"
         git status
         git add ./manifests
         git commit -m "Updated the version of the Docker image"
