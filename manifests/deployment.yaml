@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: zhandosusen/django-app:949ce97
+        image: zhandosusen/django-app:be85dfd
         ports:
         - containerPort: 8000
