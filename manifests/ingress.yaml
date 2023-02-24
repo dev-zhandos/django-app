@@ -16,6 +16,7 @@ spec:
             port:
               number: 80
         path: /
+        pathType: Prefix
   #tls:
   #- hosts:
   #  - dev.example.com
